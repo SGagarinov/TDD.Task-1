@@ -30,6 +30,7 @@ public class PhoneBook {
     }
 
     public HashMap<String, Long> printAllNames() {
-        return null;
+        System.out.println(contacts);
+        return contacts;
     }
 }
