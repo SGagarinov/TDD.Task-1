@@ -32,5 +32,17 @@ class PhoneBookTest {
         assertEquals(valid, result);
     }
 
+    @Test
+    void findByNameTest() {
+        Long valid = 88005553535L;
+        String name = "Petya";
+
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add(name, valid);
+
+        Long result = phoneBook.findByName(name);
+        assertNotNull(result);
+        assertEquals(valid, result);
+    }
 
 }
