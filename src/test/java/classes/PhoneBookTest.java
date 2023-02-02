@@ -26,8 +26,11 @@ class PhoneBookTest {
         String valid = "Petya";
 
         PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add(valid, number);
         String result = phoneBook.findByNumber(number);
         assertNotNull(result);
         assertEquals(valid, result);
     }
+
+
 }

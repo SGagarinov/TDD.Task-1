@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class PhoneBook {
 
@@ -16,6 +17,11 @@ public class PhoneBook {
     }
 
     public String findByNumber(Long number) {
+        if (contacts.containsValue(number)) {
+            for (Map.Entry<String, Long> entry : contacts.entrySet()) {
+                if (entry.getValue() == number) return entry.getKey();
+            }
+        }
         return null;
     }
 }
