@@ -28,4 +28,8 @@ public class PhoneBook {
     public Long findByName(String name) {
         return contacts.get(name);
     }
+
+    public HashMap<String, Long> printAllNames() {
+        return null;
+    }
 }

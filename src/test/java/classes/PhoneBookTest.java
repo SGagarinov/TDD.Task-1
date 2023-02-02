@@ -3,8 +3,10 @@ package classes;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class PhoneBookTest {
 
@@ -43,6 +45,24 @@ class PhoneBookTest {
         Long result = phoneBook.findByName(name);
         assertNotNull(result);
         assertEquals(valid, result);
+    }
+
+    @Test
+    void printAllNamesTest() {
+
+        String name = "Petya";
+        Long number = 88005553535L;
+
+        HashMap<String, Long> contacts = new HashMap<>();
+        contacts.put("Petya", 88005553535L);
+
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add(name, number);
+
+        HashMap<String, Long> result = phoneBook.printAllNames();
+        assertNotNull(result);
+        assertEquals(1, result.size());
+
     }
 
 }
